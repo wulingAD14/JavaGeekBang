@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--使用设值注入方式装配Person实例-->
+    <bean id="person1" class="week5.beanConfig.Person">
+        <property name="name" value="张三" />
+        <property name="age"  value="11" />
+    </bean>
+
+    <!--使用构造方法装配Person实例-->
+    <bean id="person2" class="week5.beanConfig.Person">
+        <constructor-arg index="0" value="李四" />
+        <constructor-arg index="1" value="22" />
+    </bean>
+
+    <!--使用p命名空间注入-->
+    <bean id="person3" class="week5.beanConfig.Person" p:name="王五" p:age="33" />
+
+
+</beans>
