@@ -1,0 +1,7 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true #当出现相同名字的类进行注册时&#xff0c;准许覆盖注册,解决重写DataSource问题
+
+logging:
+  level:
+    root: debug
