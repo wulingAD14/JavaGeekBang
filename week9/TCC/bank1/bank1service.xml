@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--声明dubbo的服务名称-->
+    <dubbo:application name="bank1-service" />
+
+    <!--声明访问dubbo服务的协议-->
+    <dubbo:protocol name="dubbo" port="11111" />
+
+    <!--声明服务接口-->
+    <dubbo:service interface="org.example.bank1.AccountService" ref="accountService" registry="N/A"/>
+
+    <!--声明接口的实现类对象-->
+    <bean id="accountService" class="org.example.bank1.AccountServiceImpl" />
+
+</beans>
